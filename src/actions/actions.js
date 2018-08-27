@@ -50,6 +50,9 @@ export const updateCustomer = (customer) => dispatch => {
         body: JSON.stringify(customer)
     })
         // .then((res) => res.json())
+        .then(res => dispatch(
+            fetchCustomers()
+        ))
         .then(customer => dispatch({
             type: UPDATE_CUSTOMER,
             payload: customer
